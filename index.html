@@ -18,8 +18,7 @@
         /* Force Apple's native system font for authenticity */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0f171e; /* Deep Navy Background */
-            color: white;
+            background-color: #0f171e; /* Deep Navy Background for PIN screen */
             user-select: none; /* Prevents text highlighting on tap */
             -webkit-tap-highlight-color: transparent; /* Removes blue tap flash on iOS */
         }
@@ -31,10 +30,15 @@
             75% { transform: translateX(10px); }
         }
         .shake { animation: shake 0.3s ease-in-out; }
+
+        /* Hide scrollbar for cleaner app feel */
+        ::-webkit-scrollbar {
+            display: none;
+        }
     </style>
 </head>
 <!-- Using 100dvh ensures it fits perfectly regardless of mobile browser toolbars -->
-<body class="h-[100dvh] w-screen overflow-hidden flex flex-col items-center">
+<body class="h-[100dvh] w-screen overflow-hidden flex flex-col items-center text-white transition-colors duration-300" id="body-bg">
 
     <!-- THE PIN ENTRY SCREEN -->
     <div id="pin-screen" class="w-full max-w-md h-full flex flex-col px-6 py-8 sm:py-12 relative transition-opacity duration-300">
@@ -56,7 +60,7 @@
             </button>
         </header>
 
-        <!-- Main Text and PIN Dots (mb-auto pushes the keypad down) -->
+        <!-- Main Text and PIN Dots -->
         <main class="flex flex-col items-center mt-10 sm:mt-16 mb-auto">
             <h1 class="text-[clamp(20px,5vw,22px)] font-semibold text-center leading-relaxed">
                 Enter personal account 
@@ -64,7 +68,7 @@
             </h1>
             <p class="text-[#8e9aa5] text-[17px] mt-2">Unlock Monzo app</p>
 
-            <!-- The 4 Hollow Circles - Increased top margin to separate from text -->
+            <!-- The 4 Hollow Circles -->
             <div id="pin-dots" class="flex gap-5 mt-10 sm:mt-14">
                 <div class="pin-dot w-[18px] h-[18px] rounded-full border-2 border-white transition-colors duration-150"></div>
                 <div class="pin-dot w-[18px] h-[18px] rounded-full border-2 border-white transition-colors duration-150"></div>
@@ -73,12 +77,10 @@
             </div>
         </main>
 
-        <!-- The Number Pad Grid (mt-8 guarantees it stays away from dots on tiny screens) -->
+        <!-- The Number Pad Grid -->
         <div class="flex flex-col items-center w-full mb-6 sm:mb-8 mt-8">
-            <!-- place-items-center automatically centers all buttons, gap-x-6 scales better -->
             <div class="grid grid-cols-3 gap-x-6 gap-y-3 sm:gap-y-4 w-full max-w-[320px] place-items-center">
                 
-                <!-- Buttons 1-9: Using clamp() makes them resize perfectly based on the screen width! -->
                 <button onclick="pressKey('1')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">1</button>
                 <button onclick="pressKey('2')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">2</button>
                 <button onclick="pressKey('3')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">3</button>
@@ -91,11 +93,9 @@
                 <button onclick="pressKey('8')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">8</button>
                 <button onclick="pressKey('9')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">9</button>
                 
-                <!-- Bottom Row (Empty, 0, Backspace) -->
                 <div></div>
                 <button onclick="pressKey('0')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">0</button>
                 
-                <!-- Backspace/Delete key -->
                 <button onclick="deleteKey()" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full flex items-center justify-center text-white/50 active:text-white transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z" />
@@ -107,7 +107,6 @@
         <!-- Footer: Touch ID Button -->
         <button class="w-full bg-[#17232f] hover:bg-[#1f2e3d] active:bg-[#1a2836] rounded-2xl flex items-center justify-between p-4 mb-2 transition-colors">
             <div class="flex items-center gap-4">
-                <!-- Cyan Fingerprint SVG -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#25a8e0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10"></path>
                     <path d="M5 12c0-3.87 3.13-7 7-7s7 3.13 7 7"></path>
@@ -123,17 +122,540 @@
         </button>
     </div>
 
-    <!-- THE DUMMY LOGGED-IN SCREEN (Hidden by default) -->
-    <div id="success-screen" class="hidden w-full h-full flex flex-col items-center justify-center bg-[#E5F904] text-black">
-        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-6">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-        </svg>
-        <h1 class="text-3xl font-bold mb-2">Authenticated!</h1>
-        <p class="text-gray-700 mb-8">Your dummy PIN was accepted.</p>
-        <button onclick="logout()" class="bg-black text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg active:scale-95 transition-transform">
-            Lock App Again
-        </button>
+    <!-- THE LOGGED-IN DASHBOARD SCREEN (Hidden by default) -->
+    <div id="home-screen" class="hidden w-full h-full flex-col text-black relative">
+        
+        <!-- Background top blur/gradient effect to match design -->
+        <div class="absolute top-0 w-full h-40 bg-gradient-to-b from-[#e1eff2] to-transparent z-0 pointer-events-none"></div>
+
+        <!-- Scrollable content area -->
+        <div class="w-full flex-1 overflow-y-auto px-4 z-10 pb-28">
+            
+            <!-- Top App Bar -->
+            <div class="flex items-center justify-between pt-12 pb-2">
+                <div class="flex items-center gap-3">
+                    <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-bold text-[19px]">N</div>
+                    <button class="bg-white px-5 py-2.5 rounded-full font-semibold text-[15px] shadow-sm text-black hover:bg-gray-50 active:scale-95 transition-transform">Upgrade</button>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="flex bg-white rounded-full px-4 py-2.5 gap-4 shadow-sm items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="8" width="18" height="4" rx="1"></rect>
+                            <path d="M12 8v13"></path>
+                            <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"></path>
+                            <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"></path>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white shadow-sm hover:opacity-90 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monzo Business Card -->
+            <div class="mt-4 bg-[#0a1e36] text-white rounded-[24px] p-5 shadow-[0_8px_20px_rgba(0,0,0,0.1)] relative">
+                
+                <!-- Top Row: Logo & Balance -->
+                <div class="flex justify-between items-start">
+                    <div class="flex flex-col">
+                        <span class="text-[#ff4c4c] font-bold text-2xl tracking-tight leading-none lowercase">monzo</span>
+                        <span class="text-[#ff4c4c] font-bold text-[9px] tracking-widest mt-0.5">BUSINESS</span>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <div class="flex items-baseline">
+                            <span class="text-xl font-medium mr-0.5">£</span>
+                            <span class="text-3xl font-semibold">5.78</span>
+                        </div>
+                        <span class="text-gray-300 text-[13px] mt-0.5">Balance</span>
+                    </div>
+                </div>
+
+                <!-- Middle Row: Bank Details -->
+                <div class="flex items-center gap-2 mt-4 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                        <rect x="2" y="20" width="20" height="2"></rect>
+                        <path d="M4 20V9"></path>
+                        <path d="M8 20V9"></path>
+                        <path d="M12 20V9"></path>
+                        <path d="M16 20V9"></path>
+                        <path d="M20 20V9"></path>
+                        <polygon points="12 2 2 7 22 7 12 2"></polygon>
+                    </svg>
+                    <span class="text-[14px] font-medium tracking-wide">04-00-05 • 90761683</span>
+                </div>
+
+                <!-- Bottom Row: Buttons -->
+                <div class="flex items-center gap-3">
+                    <button class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 16V4m0 0L3 8m4-4l4 4"></path>
+                            <path d="M17 8v12m0 0l4-4m-4 4l-4-4"></path>
+                        </svg>
+                        <span class="font-semibold text-[15px]">Move money</span>
+                    </button>
+                    <button class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#0693a6] hover:bg-[#07a3b8] transition-colors flex-1 justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"></path>
+                        </svg>
+                        <span class="font-semibold text-[15px]">Activate card</span>
+                    </button>
+                    <button class="flex items-center justify-center w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="5" cy="12" r="2"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                            <circle cx="19" cy="12" r="2"></circle>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Activity List Section -->
+            <div class="mt-6 bg-white rounded-[24px] p-5 shadow-sm">
+                <!-- Activity Header -->
+                <div class="flex justify-between items-center mb-5">
+                    <h2 class="text-xl font-bold">Activity</h2>
+                    <div class="flex gap-1">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#0693a6]"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#0693a6]"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#0693a6]"></div>
+                    </div>
+                </div>
+
+                <!-- Transaction 1 -->
+                <div class="flex justify-between items-center py-4 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px]">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="text-[17px] truncate max-w-[170px] sm:max-w-[220px]">Nagalakshmi Naagulapa...</span>
+                    </div>
+                    <span class="text-[20px]">20.00</span>
+                </div>
+
+                <!-- Transaction 2 -->
+                <div class="flex justify-between items-center py-4 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px]">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#111] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="text-[17px] truncate max-w-[170px] sm:max-w-[220px]">Nagalakshmi Naagulapa...</span>
+                    </div>
+                    <span class="text-[20px]">400.00</span>
+                </div>
+
+                <!-- Transaction 3 -->
+                <div class="flex justify-between items-center py-4">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px]">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="text-[17px] truncate max-w-[170px] sm:max-w-[220px]">Nagalakshmi Naagu...</span>
+                    </div>
+                    <span class="text-[22px]">2,000.00</span>
+                </div>
+
+                <!-- See all button -->
+                <button onclick="openActivity()" class="mt-4 text-[#0693a6] font-medium text-[16px] active:opacity-70 transition-opacity">See all</button>
+            </div>
+            
+        </div>
+
+        <!-- Fixed Bottom Navigation Bar -->
+        <div class="absolute bottom-0 w-full bg-white/90 backdrop-blur-md border-t border-gray-100 pb-8 pt-3 px-2 flex justify-around items-center z-20">
+            <!-- Home (Active) -->
+            <div class="flex flex-col items-center justify-center w-[72px] h-[48px] rounded-[18px] bg-[#e2f4f6]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" class="text-[#0693a6]">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span class="text-[11px] font-semibold text-[#0693a6] mt-1">Home</span>
+            </div>
+            
+            <!-- Insights -->
+            <div class="flex flex-col items-center justify-center w-[72px] h-[48px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-800">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+                <span class="text-[11px] font-medium text-gray-600 mt-1">Insights</span>
+            </div>
+
+            <!-- Get Paid -->
+            <div class="flex flex-col items-center justify-center w-[72px] h-[48px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-800">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                    <line x1="7" y1="15" x2="11" y2="15"></line>
+                </svg>
+                <span class="text-[11px] font-medium text-gray-600 mt-1">Get Paid</span>
+            </div>
+
+            <!-- Pay -->
+            <div class="flex flex-col items-center justify-center w-[72px] h-[48px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-800">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+                <span class="text-[11px] font-medium text-gray-600 mt-1">Pay</span>
+            </div>
+
+            <!-- Help -->
+            <div class="flex flex-col items-center justify-center w-[72px] h-[48px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-800">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span class="text-[11px] font-medium text-gray-600 mt-1">Help</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALL ACTIVITY FULL SCREEN MODAL -->
+    <!-- It starts hidden and translated fully off-screen downwards -->
+    <div id="activity-screen" class="fixed inset-0 z-50 flex-col justify-end translate-y-full transition-transform duration-300 ease-in-out hidden">
+        
+        <!-- The white modal body with rounded top -->
+        <div class="bg-white w-full h-[96%] rounded-t-[32px] flex flex-col shadow-[0_-10px_40px_rgba(0,0,0,0.1)] text-black">
+            
+            <!-- Sticky Header -->
+            <div class="flex justify-between items-center px-6 pt-6 pb-4 bg-white rounded-t-[32px] sticky top-0 z-10 border-b border-gray-50">
+                <!-- Close Button -->
+                <button onclick="closeActivity()" class="w-10 h-10 bg-[#f4f5f6] rounded-full flex items-center justify-center active:bg-gray-200 transition-colors">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                
+                <h2 class="text-[19px] font-bold">All activity</h2>
+                
+                <!-- Search Button -->
+                <button class="w-10 h-10 bg-[#f4f5f6] rounded-full flex items-center justify-center active:bg-gray-200 transition-colors">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+
+            <!-- Scrollable Transactions List -->
+            <div class="flex-1 overflow-y-auto px-5 pb-12">
+                
+                <!-- ================= TODAY ================= -->
+                <div class="flex justify-between items-center mt-6 mb-1 px-1">
+                    <span class="text-[12px] text-gray-500 font-bold tracking-wider uppercase">Today</span>
+                    <span class="text-[13px] text-gray-500 font-medium">£9.20</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Nagalakshmi Naagulapalli</span>
+                    </div>
+                    <span class="text-[20px]">20.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Nagalakshmi Naagulapalli</span>
+                    </div>
+                    <span class="text-[20px]">400.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Nagalakshmi Naagulapa...</span>
+                    </div>
+                    <span class="text-[20px]">2,000.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Nagalakshmi Naagulapa...</span>
+                    </div>
+                    <span class="text-[20px]">2,500.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <!-- Green badge for Intuit -->
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#c3f08b] flex items-center justify-center text-[#111] font-bold text-[15px] tracking-wide">IL</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Intuit Limited</span>
+                            <span class="text-[13px] text-gray-500 truncate max-w-[160px]">Q65JR-INTUITSGUN</span>
+                        </div>
+                    </div>
+                    <!-- Incoming text is green -->
+                    <span class="text-[20px] font-medium text-[#04a758]">+4,910.80</span>
+                </div>
+
+                <!-- ================= YESTERDAY ================= -->
+                <div class="flex justify-between items-center mt-8 mb-1 px-1">
+                    <span class="text-[12px] text-gray-500 font-bold tracking-wider uppercase">Yesterday</span>
+                    <span class="text-[13px] text-gray-500 font-medium">£34.60</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <!-- Dark Teal badge for GoCardless -->
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#005a60] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">G</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">GoCardless</span>
+                            <span class="text-[13px] text-gray-500 truncate max-w-[160px]">PRQ01KQA4ACC1CZC72</span>
+                        </div>
+                    </div>
+                    <span class="text-[20px]">25.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Nagalakshmi Naagulapalli</span>
+                    </div>
+                    <span class="text-[20px]">900.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Nagalakshmi Naagulapalli</span>
+                    </div>
+                    <span class="text-[20px]">1,400.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Nagalakshmi Naagulapalli</span>
+                    </div>
+                    <span class="text-[20px]">1,500.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <!-- Green badge for Intuit -->
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#c3f08b] flex items-center justify-center text-[#111] font-bold text-[15px] tracking-wide">IL</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Intuit Limited</span>
+                            <span class="text-[13px] text-gray-500 truncate max-w-[160px]">JOUPR-INTUITJDOM</span>
+                        </div>
+                    </div>
+                    <!-- Incoming text is green -->
+                    <span class="text-[20px] font-medium text-[#04a758]">+3,790.40</span>
+                </div>
+
+
+                <!-- ================= MONDAY 27 APR ================= -->
+                <div class="flex justify-between items-center mt-8 mb-1 px-1">
+                    <span class="text-[12px] text-gray-500 font-bold tracking-wider uppercase">Monday 27 Apr</span>
+                    <span class="text-[13px] text-gray-500 font-medium">£21.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <!-- Red badge for Praveen -->
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#ff4c4c] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">PN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Praveen Nandyal</span>
+                            <span class="text-[13px] text-gray-500 truncate max-w-[160px]">Praveen Nandyal</span>
+                        </div>
+                    </div>
+                    <span class="text-[20px]">11.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px] uppercase">NAGALAKSHMI NAAGULAP...</span>
+                            <span class="text-[13px] text-gray-500 truncate max-w-[160px] uppercase">NAGALAKSHMI NAAGULAPALLI</span>
+                        </div>
+                    </div>
+                    <span class="text-[20px]">10.00</span>
+                </div>
+
+
+                <!-- ================= SUNDAY 26 APR ================= -->
+                <div class="flex justify-between items-center mt-8 mb-1 px-1">
+                    <span class="text-[12px] text-gray-500 font-bold tracking-wider uppercase">Sunday 26 Apr</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px] uppercase">NAGALAKSHMI NAAGULA...</span>
+                            <span class="text-[13px] text-gray-500 truncate max-w-[160px] uppercase">NAGALAKSHMI NAAGULAPALLI</span>
+                        </div>
+                    </div>
+                    <span class="text-[20px]">101.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <!-- Red badge for Praveen -->
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#ff4c4c] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">PN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Praveen Nandyal</span>
+                            <span class="text-[13px] text-gray-500 truncate max-w-[160px]">Praveen Nandyal</span>
+                        </div>
+                    </div>
+                    <span class="text-[20px]">120.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Nagalakshmi Naagulapalli</span>
+                            <span class="text-[13px] text-gray-500 truncate max-w-[160px]">Self</span>
+                        </div>
+                    </div>
+                    <!-- Incoming text is green -->
+                    <span class="text-[20px] font-medium text-[#04a758]">+285.00</span>
+                </div>
+
+                <!-- ================= SATURDAY 25 APR ================= -->
+                <div class="flex justify-between items-center mt-8 mb-1 px-1">
+                    <span class="text-[12px] text-gray-500 font-bold tracking-wider uppercase">Saturday 25 Apr</span>
+                    <span class="text-[13px] text-gray-500 font-medium">£45.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px] uppercase">NAGALAKSHMI NAAGULAP...</span>
+                            <span class="text-[13px] text-gray-500 truncate max-w-[160px] uppercase">NAGALAKSHMI NAAGULAPALLI</span>
+                        </div>
+                    </div>
+                    <span class="text-[20px]">30.00</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-[42px] h-[42px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[15px] tracking-wide">NN</div>
+                            <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-[#ff4c4c] rounded border-[1.5px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-[17px] truncate max-w-[160px] sm:max-w-[220px]">Nagalakshmi Naagulapalli</span>
+                            <span class="text-[13px] text-gray-500 truncate max-w-[160px]">Nagalakshmi Naagulapalli</span>
+                        </div>
+                    </div>
+                    <span class="text-[20px]">15.00</span>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <!-- JAVASCRIPT LOGIC -->
@@ -141,35 +663,39 @@
         let currentPin = "";
         const dots = document.querySelectorAll('.pin-dot');
         const pinScreen = document.getElementById('pin-screen');
-        const successScreen = document.getElementById('success-screen');
+        const homeScreen = document.getElementById('home-screen');
+        const activityScreen = document.getElementById('activity-screen');
+        const bodyBg = document.getElementById('body-bg');
 
         function updateDots() {
             dots.forEach((dot, index) => {
                 if (index < currentPin.length) {
-                    // Fill the circle with white
                     dot.classList.add('bg-white');
                 } else {
-                    // Empty the circle
                     dot.classList.remove('bg-white');
                 }
             });
         }
 
         function pressKey(num) {
-            // Prevent entering more than 4 digits
             if (currentPin.length >= 4) return;
 
             currentPin += num;
             updateDots();
 
-            // If we hit 4 digits, log in immediately
             if (currentPin.length === 4) {
-                // Add a tiny delay so the user sees the 4th dot fill up before screen changes
+                // Short delay to let user see 4th dot fill up
                 setTimeout(() => {
+                    // Hide PIN screen, show Dashboard
                     pinScreen.classList.add('hidden');
-                    successScreen.classList.remove('hidden');
+                    homeScreen.classList.remove('hidden');
+                    homeScreen.classList.add('flex');
                     
-                    // Reset the PIN in the background for when they log out
+                    // Change body background from Navy to Light Gray for the dashboard
+                    bodyBg.classList.remove('bg-[#0f171e]');
+                    bodyBg.classList.add('bg-[#f3f7f8]');
+                    
+                    // Reset PIN behind the scenes
                     currentPin = "";
                     updateDots();
                 }, 150); 
@@ -183,9 +709,28 @@
             }
         }
 
-        function logout() {
-            successScreen.classList.add('hidden');
-            pinScreen.classList.remove('hidden');
+        // Functions for the "All Activity" screen
+        function openActivity() {
+            // Remove hidden class first so it exists in DOM
+            activityScreen.classList.remove('hidden');
+            activityScreen.classList.add('flex');
+            
+            // Force a browser reflow so the transition animation actually plays
+            void activityScreen.offsetWidth; 
+            
+            // Slide it up
+            activityScreen.classList.remove('translate-y-full');
+        }
+
+        function closeActivity() {
+            // Slide it down
+            activityScreen.classList.add('translate-y-full');
+            
+            // Wait for the animation to finish before hiding from DOM
+            setTimeout(() => {
+                activityScreen.classList.add('hidden');
+                activityScreen.classList.remove('flex');
+            }, 300); // This matches the duration-300 class in Tailwind
         }
     </script>
 </body>
