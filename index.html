@@ -159,8 +159,8 @@
                 </div>
             </div>
 
-            <!-- Monzo Business Card -->
-            <div class="mt-4 bg-[#0a1e36] text-white rounded-[24px] p-5 shadow-[0_8px_20px_rgba(0,0,0,0.1)] relative">
+            <!-- Monzo Business Card with beautiful faded radial/linear gradient -->
+            <div class="mt-4 bg-gradient-to-br from-[#0c2f54] to-[#041221] text-white rounded-[24px] p-5 shadow-[0_8px_20px_rgba(0,0,0,0.1)] relative">
                 
                 <!-- Top Row: Logo & Balance -->
                 <div class="flex justify-between items-start">
@@ -193,20 +193,25 @@
 
                 <!-- Bottom Row: Buttons -->
                 <div class="flex items-center gap-2">
-                    <button class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M7 16V4m0 0L3 8m4-4l4 4"></path>
-                            <path d="M17 8v12m0 0l4-4m-4 4l-4-4"></path>
+                    <!-- Move money (Horizontal Arrows) -->
+                    <button class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors whitespace-nowrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 5L4 9l4 4"></path>
+                            <path d="M4 9h16"></path>
+                            <path d="M16 19l4-4-4-4"></path>
+                            <path d="M20 15H4"></path>
                         </svg>
                         <span class="font-semibold text-[14px]">Move money</span>
                     </button>
-                    <button class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#0693a6] hover:bg-[#07a3b8] transition-colors flex-1 justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"></path>
+                    <!-- Activate card (Magic Wand) -->
+                    <button class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#0693a6] hover:bg-[#07a3b8] transition-colors flex-1 justify-center whitespace-nowrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"></path>
+                            <path d="m14 7 3 3"></path>
                         </svg>
                         <span class="font-semibold text-[14px]">Activate card</span>
                     </button>
-                    <button class="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+                    <button class="flex items-center justify-center w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                             <circle cx="5" cy="12" r="2"></circle>
                             <circle cx="12" cy="12" r="2"></circle>
@@ -241,7 +246,7 @@
                             <span class="text-[16px] text-gray-900 truncate">Nagalakshmi Naagulapalli</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">20.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">20.00</span>
                 </div>
 
                 <!-- Transaction 2 -->
@@ -257,11 +262,11 @@
                             <span class="text-[16px] text-gray-900 truncate">Nagalakshmi Naagulapalli</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">400.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">400.00</span>
                 </div>
 
                 <!-- Transaction 3 -->
-                <div class="flex justify-between items-center py-3.5">
+                <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
@@ -273,7 +278,7 @@
                             <span class="text-[16px] text-gray-900 truncate">Nagalakshmi Naagulapalli</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">2,000.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">2,000.00</span>
                 </div>
 
                 <!-- See all button -->
@@ -363,7 +368,7 @@
                 <!-- ================= TODAY ================= -->
                 <div class="flex justify-between items-center mt-5 mb-1 px-1">
                     <span class="text-[11px] text-gray-500 font-bold tracking-wider uppercase">Today</span>
-                    <span class="text-[12px] text-gray-500 font-medium">£9.20</span>
+                    <span class="text-[13px] text-gray-500 font-semibold">£9.20</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -378,7 +383,7 @@
                             <span class="text-[16px] text-gray-900 truncate">Nagalakshmi Naagulapalli</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">20.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">20.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -393,7 +398,7 @@
                             <span class="text-[16px] text-gray-900 truncate">Nagalakshmi Naagulapalli</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">400.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">400.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -408,7 +413,7 @@
                             <span class="text-[16px] text-gray-900 truncate">Nagalakshmi Naagulapalli</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">2,000.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">2,000.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -423,7 +428,7 @@
                             <span class="text-[16px] text-gray-900 truncate">Nagalakshmi Naagulapalli</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">2,500.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">2,500.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -439,13 +444,13 @@
                             <span class="text-[13px] text-gray-500 truncate mt-0.5">Q65JR-INTUITSGUN</span>
                         </div>
                     </div>
-                    <span class="text-[19px] font-medium text-[#04a758] flex-shrink-0">+4,910.80</span>
+                    <span class="text-[20px] font-semibold text-[#04a758] flex-shrink-0">+4,910.80</span>
                 </div>
 
                 <!-- ================= YESTERDAY ================= -->
                 <div class="flex justify-between items-center mt-7 mb-1 px-1">
                     <span class="text-[11px] text-gray-500 font-bold tracking-wider uppercase">Yesterday</span>
-                    <span class="text-[12px] text-gray-500 font-medium">£34.60</span>
+                    <span class="text-[13px] text-gray-500 font-semibold">£34.60</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -461,7 +466,7 @@
                             <span class="text-[13px] text-gray-500 truncate mt-0.5">PRQ01KQA4ACC1CZC72</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">25.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">25.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -476,7 +481,7 @@
                             <span class="text-[16px] text-gray-900 truncate">Nagalakshmi Naagulapalli</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">900.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">900.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -491,7 +496,7 @@
                             <span class="text-[16px] text-gray-900 truncate">Nagalakshmi Naagulapalli</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">1,400.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">1,400.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -506,7 +511,7 @@
                             <span class="text-[16px] text-gray-900 truncate">Nagalakshmi Naagulapalli</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">1,500.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">1,500.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -522,14 +527,14 @@
                             <span class="text-[13px] text-gray-500 truncate mt-0.5">JOUPR-INTUITJDOM</span>
                         </div>
                     </div>
-                    <span class="text-[19px] font-medium text-[#04a758] flex-shrink-0">+3,790.40</span>
+                    <span class="text-[20px] font-semibold text-[#04a758] flex-shrink-0">+3,790.40</span>
                 </div>
 
 
                 <!-- ================= MONDAY 27 APR ================= -->
                 <div class="flex justify-between items-center mt-7 mb-1 px-1">
                     <span class="text-[11px] text-gray-500 font-bold tracking-wider uppercase">Monday 27 Apr</span>
-                    <span class="text-[12px] text-gray-500 font-medium">£21.00</span>
+                    <span class="text-[13px] text-gray-500 font-semibold">£21.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -545,7 +550,7 @@
                             <span class="text-[13px] text-gray-500 truncate mt-0.5">Praveen Nandyal</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">11.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">11.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -561,7 +566,7 @@
                             <span class="text-[13px] text-gray-500 truncate mt-0.5 uppercase">NAGALAKSHMI NAAGULAPALLI</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">10.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">10.00</span>
                 </div>
 
 
@@ -583,7 +588,7 @@
                             <span class="text-[13px] text-gray-500 truncate mt-0.5 uppercase">NAGALAKSHMI NAAGULAPALLI</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">101.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">101.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -599,7 +604,7 @@
                             <span class="text-[13px] text-gray-500 truncate mt-0.5">Praveen Nandyal</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">120.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">120.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -615,13 +620,13 @@
                             <span class="text-[13px] text-gray-500 truncate mt-0.5">Self</span>
                         </div>
                     </div>
-                    <span class="text-[19px] font-medium text-[#04a758] flex-shrink-0">+285.00</span>
+                    <span class="text-[20px] font-semibold text-[#04a758] flex-shrink-0">+285.00</span>
                 </div>
 
                 <!-- ================= SATURDAY 25 APR ================= -->
                 <div class="flex justify-between items-center mt-7 mb-1 px-1">
                     <span class="text-[11px] text-gray-500 font-bold tracking-wider uppercase">Saturday 25 Apr</span>
-                    <span class="text-[12px] text-gray-500 font-medium">£45.00</span>
+                    <span class="text-[13px] text-gray-500 font-semibold">£45.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -637,7 +642,7 @@
                             <span class="text-[13px] text-gray-500 truncate mt-0.5 uppercase">NAGALAKSHMI NAAGULAPALLI</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">30.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">30.00</span>
                 </div>
 
                 <div class="flex justify-between items-center py-3.5 border-b border-gray-100">
@@ -653,7 +658,7 @@
                             <span class="text-[13px] text-gray-500 truncate mt-0.5">Nagalakshmi Naagulapalli</span>
                         </div>
                     </div>
-                    <span class="text-[19px] text-gray-900 flex-shrink-0">15.00</span>
+                    <span class="text-[20px] font-semibold text-gray-900 flex-shrink-0">15.00</span>
                 </div>
 
             </div>
