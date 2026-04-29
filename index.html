@@ -33,10 +33,11 @@
         .shake { animation: shake 0.3s ease-in-out; }
     </style>
 </head>
-<body class="h-screen w-screen overflow-hidden flex flex-col items-center">
+<!-- Using 100dvh ensures it fits perfectly regardless of mobile browser toolbars -->
+<body class="h-[100dvh] w-screen overflow-hidden flex flex-col items-center">
 
     <!-- THE PIN ENTRY SCREEN -->
-    <div id="pin-screen" class="w-full max-w-md h-full flex flex-col justify-between px-6 pt-12 pb-8 relative transition-opacity duration-300">
+    <div id="pin-screen" class="w-full max-w-md h-full flex flex-col px-6 py-8 sm:py-12 relative transition-opacity duration-300">
         
         <!-- Header: Log out, Lock Icon, Forgot PIN -->
         <header class="flex justify-between items-center w-full">
@@ -55,16 +56,16 @@
             </button>
         </header>
 
-        <!-- Main Text and PIN Dots -->
-        <main class="flex flex-col items-center mt-12 mb-auto">
-            <h1 class="text-[22px] font-semibold text-center leading-relaxed">
+        <!-- Main Text and PIN Dots (mb-auto pushes the keypad down) -->
+        <main class="flex flex-col items-center mt-10 sm:mt-16 mb-auto">
+            <h1 class="text-[clamp(20px,5vw,22px)] font-semibold text-center leading-relaxed">
                 Enter personal account 
                 <span class="bg-[#f0514e] text-white px-1.5 py-0.5 rounded-md ml-1">PIN</span>
             </h1>
             <p class="text-[#8e9aa5] text-[17px] mt-2">Unlock Monzo app</p>
 
-            <!-- The 4 Hollow Circles -->
-            <div id="pin-dots" class="flex gap-4 mt-12">
+            <!-- The 4 Hollow Circles - Increased top margin to separate from text -->
+            <div id="pin-dots" class="flex gap-5 mt-10 sm:mt-14">
                 <div class="pin-dot w-[18px] h-[18px] rounded-full border-2 border-white transition-colors duration-150"></div>
                 <div class="pin-dot w-[18px] h-[18px] rounded-full border-2 border-white transition-colors duration-150"></div>
                 <div class="pin-dot w-[18px] h-[18px] rounded-full border-2 border-white transition-colors duration-150"></div>
@@ -72,27 +73,30 @@
             </div>
         </main>
 
-        <!-- The Number Pad Grid -->
-        <div class="flex flex-col items-center w-full mb-8">
-            <div class="grid grid-cols-3 gap-x-8 gap-y-4 w-full max-w-[280px]">
-                <!-- Buttons 1-9 -->
-                <button onclick="pressKey('1')" class="w-[80px] h-[80px] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[32px] font-light transition-colors justify-self-center">1</button>
-                <button onclick="pressKey('2')" class="w-[80px] h-[80px] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[32px] font-light transition-colors justify-self-center">2</button>
-                <button onclick="pressKey('3')" class="w-[80px] h-[80px] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[32px] font-light transition-colors justify-self-center">3</button>
+        <!-- The Number Pad Grid (mt-8 guarantees it stays away from dots on tiny screens) -->
+        <div class="flex flex-col items-center w-full mb-6 sm:mb-8 mt-8">
+            <!-- place-items-center automatically centers all buttons, gap-x-6 scales better -->
+            <div class="grid grid-cols-3 gap-x-6 gap-y-3 sm:gap-y-4 w-full max-w-[320px] place-items-center">
                 
-                <button onclick="pressKey('4')" class="w-[80px] h-[80px] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[32px] font-light transition-colors justify-self-center">4</button>
-                <button onclick="pressKey('5')" class="w-[80px] h-[80px] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[32px] font-light transition-colors justify-self-center">5</button>
-                <button onclick="pressKey('6')" class="w-[80px] h-[80px] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[32px] font-light transition-colors justify-self-center">6</button>
+                <!-- Buttons 1-9: Using clamp() makes them resize perfectly based on the screen width! -->
+                <button onclick="pressKey('1')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">1</button>
+                <button onclick="pressKey('2')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">2</button>
+                <button onclick="pressKey('3')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">3</button>
                 
-                <button onclick="pressKey('7')" class="w-[80px] h-[80px] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[32px] font-light transition-colors justify-self-center">7</button>
-                <button onclick="pressKey('8')" class="w-[80px] h-[80px] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[32px] font-light transition-colors justify-self-center">8</button>
-                <button onclick="pressKey('9')" class="w-[80px] h-[80px] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[32px] font-light transition-colors justify-self-center">9</button>
+                <button onclick="pressKey('4')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">4</button>
+                <button onclick="pressKey('5')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">5</button>
+                <button onclick="pressKey('6')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">6</button>
                 
-                <!-- Bottom Row (Empty, 0, Backspace/Empty) -->
+                <button onclick="pressKey('7')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">7</button>
+                <button onclick="pressKey('8')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">8</button>
+                <button onclick="pressKey('9')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">9</button>
+                
+                <!-- Bottom Row (Empty, 0, Backspace) -->
                 <div></div>
-                <button onclick="pressKey('0')" class="w-[80px] h-[80px] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[32px] font-light transition-colors justify-self-center">0</button>
-                <!-- Invisible button for layout balance. We will make it a backspace if they want to clear -->
-                <button onclick="deleteKey()" class="w-[80px] h-[80px] rounded-full flex items-center justify-center text-white/50 active:text-white transition-colors justify-self-center">
+                <button onclick="pressKey('0')" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full bg-[#222e3a] active:bg-[#344454] flex items-center justify-center text-[clamp(28px,7vw,32px)] font-light transition-colors">0</button>
+                
+                <!-- Backspace/Delete key -->
+                <button onclick="deleteKey()" class="w-[clamp(65px,18vw,80px)] h-[clamp(65px,18vw,80px)] rounded-full flex items-center justify-center text-white/50 active:text-white transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z" />
                     </svg>
