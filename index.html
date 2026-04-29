@@ -134,24 +134,26 @@
             <!-- Top App Bar -->
             <div class="flex items-center justify-between pt-12 pb-2">
                 <div class="flex items-center gap-2">
-                    <div class="w-[38px] h-[38px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-bold text-[17px]">N</div>
-                    <button class="bg-white px-4 py-1.5 rounded-full font-semibold text-[14px] shadow-sm text-black hover:bg-gray-50 active:scale-95 transition-transform">Upgrade</button>
+                    <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-bold text-[17px]">N</div>
+                    <button class="bg-white px-4 h-[40px] flex items-center justify-center rounded-full font-semibold text-[14px] shadow-sm text-black hover:bg-gray-50 active:scale-95 transition-transform">Upgrade</button>
                 </div>
                 <div class="flex items-center gap-2">
-                    <div class="flex bg-white rounded-full px-3.5 py-1.5 gap-4 shadow-sm items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="8" width="18" height="4" rx="1"></rect>
-                            <path d="M12 8v13"></path>
-                            <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"></path>
-                            <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"></path>
+                    <div class="flex bg-white rounded-full px-3.5 h-[40px] gap-4 shadow-sm items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                            <path d="M12 9 C 9 6, 5 7, 7 10 C 8 11.5, 11 9.5, 12 9 Z" fill="#111"/>
+                            <path d="M12 9 C 15 6, 19 7, 17 10 C 16 11.5, 13 9.5, 12 9 Z" fill="#111"/>
+                            <rect x="3" y="10" width="18" height="11" rx="1.5" fill="#111"/>
+                            <rect x="11" y="10" width="2" height="11" fill="white"/>
+                            <rect x="3" y="14.5" width="18" height="2" fill="white"/>
+                            <rect x="2" y="9.5" width="20" height="2.5" rx="0.5" fill="#111"/>
                         </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <line x1="21" y1="21" x2="16" y2="16"></line>
                         </svg>
                     </div>
-                    <div class="w-[38px] h-[38px] rounded-full bg-[#0693a6] flex items-center justify-center text-white shadow-sm hover:opacity-90 transition-opacity">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white shadow-sm hover:opacity-90 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="12" y1="5" x2="12" y2="19"></line>
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                         </svg>
@@ -160,43 +162,48 @@
             </div>
 
             <!-- Monzo Business Card with beautiful faded radial/linear gradient -->
-            <div class="mt-4 bg-gradient-to-br from-[#175c77] via-[#0d2a45] to-[#041221] text-white rounded-[24px] px-5 py-4 shadow-[0_8px_20px_rgba(0,0,0,0.1)] relative">
+            <div class="mt-4 bg-gradient-to-br from-[#175c77] via-[#0d2a45] to-[#041221] text-white rounded-[20px] p-4 shadow-sm relative">
                 
                 <!-- Top Row: Logo & Balance -->
                 <div class="flex justify-between items-start">
                     <div class="flex flex-col">
                         <span class="text-[#ff4c4c] font-bold text-2xl tracking-tight leading-none lowercase">monzo</span>
-                        <span class="text-[#ff4c4c] font-bold text-[9px] tracking-widest mt-0.5">BUSINESS</span>
+                        <span class="text-[#ff4c4c] font-bold text-[9px] tracking-widest mt-1">BUSINESS</span>
                     </div>
                     <div class="flex flex-col items-end">
-                        <div class="flex items-baseline">
+                        <div class="flex items-baseline leading-none pt-0.5">
                             <span class="text-xl font-medium mr-0.5">£</span>
-                            <span class="text-[28px] font-semibold">5.78</span>
+                            <span class="text-[28px] font-semibold leading-none">5.78</span>
                         </div>
-                        <span class="text-gray-300 text-[12px] mt-0.5">Balance</span>
                     </div>
                 </div>
 
-                <!-- Middle Row: Bank Details (Updated separated 3-pillar bank icon) -->
-                <div class="flex items-center gap-2 mt-3 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-white">
-                        <path d="M11.1 2.5a2 2 0 0 1 1.8 0l7.5 4.5A1 1 0 0 1 19.9 8.8H4.1a1 1 0 0 1-.5-1.8l7.5-4.5z"/>
-                        <rect x="5.5" y="10.5" width="2.5" height="7" rx="1.25"/>
-                        <rect x="10.75" y="10.5" width="2.5" height="7" rx="1.25"/>
-                        <rect x="16" y="10.5" width="2.5" height="7" rx="1.25"/>
-                        <rect x="3" y="19.5" width="18" height="2.5" rx="1.25"/>
-                    </svg>
-                    <span class="text-[13px] font-medium tracking-wide">04-00-05 • 90761683</span>
+                <!-- Middle Row: Bank Details & Balance Label -->
+                <div class="flex justify-between items-center mt-2.5 mb-3.5">
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" class="text-white">
+                            <path d="M11.1 2.5a2 2 0 0 1 1.8 0l7.5 4.5A1 1 0 0 1 19.9 8.8H4.1a1 1 0 0 1-.5-1.8l7.5-4.5z"/>
+                            <rect x="5.5" y="10.5" width="2.5" height="7" rx="1.25"/>
+                            <rect x="10.75" y="10.5" width="2.5" height="7" rx="1.25"/>
+                            <rect x="16" y="10.5" width="2.5" height="7" rx="1.25"/>
+                            <rect x="3" y="19.5" width="18" height="2.5" rx="1.25"/>
+                        </svg>
+                        <span class="text-[12px] font-medium tracking-wider">04-00-05 • 90761683</span>
+                    </div>
+                    <span class="text-gray-300 text-[12px] pr-0.5">Balance</span>
                 </div>
 
                 <!-- Bottom Row: Buttons (Dynamic Layout fixing the border push) -->
-                <div class="flex items-center justify-between mt-4 w-full">
+                <div class="flex items-center justify-between mt-0 w-full">
                     <!-- Left Button Group -->
                     <div class="flex items-center gap-1.5 min-w-0 pr-2">
                         <!-- Move money (Distanced Horizontal Arrows) -->
-                        <button class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors whitespace-nowrap overflow-hidden">
+                        <button class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-[#0a1c2e] hover:bg-[#122b42] transition-colors whitespace-nowrap overflow-hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
-                                <path d="M7 4L3 8l4 4 M3 8h15 M17 20l4-4-4-4 M21 16H6"></path>
+                                <path d="M8 4L4 8l4 4"/>
+                                <path d="M4 8h12"/>
+                                <path d="M16 20l4-4-4-4"/>
+                                <path d="M20 16H8"/>
                             </svg>
                             <span class="font-semibold text-[13px] sm:text-[14px]">Move money</span>
                         </button>
@@ -242,8 +249,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -258,8 +271,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -274,8 +293,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -291,11 +316,11 @@
             
         </div>
 
-        <!-- Fixed Bottom Navigation Bar -->
-        <div class="absolute bottom-0 w-full bg-white/90 backdrop-blur-md border-t border-gray-100 pb-5 pt-2 px-2 flex justify-around items-start z-20">
-            <!-- Home (Active Indicator is a wider rounded pill) -->
-            <div class="flex flex-col items-center justify-center cursor-pointer w-16">
-                <div class="flex items-center justify-center w-[64px] h-[32px] rounded-full bg-[#e2f4f6] mb-1">
+        <!-- Fixed Floating Bottom Navigation Bar -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[92%] max-w-[380px] bg-white/95 backdrop-blur-lg shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100/50 rounded-[32px] py-1.5 px-3 flex justify-around items-center z-20">
+            <!-- Home (Active Indicator is a rounded label pill) -->
+            <div class="flex flex-col items-center justify-center cursor-pointer w-[60px] py-1">
+                <div class="flex items-center justify-center w-[56px] h-[30px] rounded-full bg-[#e2f4f6] mb-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" class="text-[#0693a6]">
                         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                         <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -304,9 +329,9 @@
                 <span class="text-[10px] font-semibold text-[#0693a6]">Home</span>
             </div>
             
-            <!-- Insights -->
-            <div class="flex flex-col items-center justify-center cursor-pointer w-16">
-                <div class="flex items-center justify-center w-[64px] h-[32px] rounded-full mb-1">
+            <!-- Insights (Updated with Graph line properly hovering on top) -->
+            <div class="flex flex-col items-center justify-center cursor-pointer w-[60px] py-1">
+                <div class="flex items-center justify-center w-[56px] h-[30px] rounded-full mb-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black">
                         <line x1="18" y1="22" x2="18" y2="16"></line>
                         <line x1="12" y1="22" x2="12" y2="13"></line>
@@ -318,8 +343,8 @@
             </div>
 
             <!-- Get Paid -->
-            <div class="flex flex-col items-center justify-center cursor-pointer w-16">
-                <div class="flex items-center justify-center w-[64px] h-[32px] rounded-full mb-1">
+            <div class="flex flex-col items-center justify-center cursor-pointer w-[60px] py-1">
+                <div class="flex items-center justify-center w-[56px] h-[30px] rounded-full mb-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                         <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -332,8 +357,8 @@
             </div>
 
             <!-- Pay -->
-            <div class="flex flex-col items-center justify-center cursor-pointer w-16">
-                <div class="flex items-center justify-center w-[64px] h-[32px] rounded-full mb-1">
+            <div class="flex flex-col items-center justify-center cursor-pointer w-[60px] py-1">
+                <div class="flex items-center justify-center w-[56px] h-[30px] rounded-full mb-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
@@ -343,8 +368,8 @@
             </div>
 
             <!-- Help -->
-            <div class="flex flex-col items-center justify-center cursor-pointer w-16">
-                <div class="flex items-center justify-center w-[64px] h-[32px] rounded-full mb-1">
+            <div class="flex flex-col items-center justify-center cursor-pointer w-[60px] py-1">
+                <div class="flex items-center justify-center w-[56px] h-[30px] rounded-full mb-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black">
                         <circle cx="12" cy="12" r="10"></circle>
                         <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
@@ -390,8 +415,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -405,8 +436,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -420,8 +457,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -435,8 +478,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -450,8 +499,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#c3f08b] flex items-center justify-center text-[#111] font-bold text-[14px] tracking-wide">IL</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -473,8 +528,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#005a60] flex items-center justify-center text-white font-semibold text-[14px]">G</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -489,8 +550,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -504,8 +571,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -519,8 +592,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -534,8 +613,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#c3f08b] flex items-center justify-center text-[#111] font-bold text-[14px] tracking-wide">IL</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -557,8 +642,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#ff4c4c] flex items-center justify-center text-white font-semibold text-[14px]">PN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -573,8 +664,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -595,8 +692,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -611,8 +714,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#ff4c4c] flex items-center justify-center text-white font-semibold text-[14px]">PN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -627,8 +736,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -649,8 +764,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
@@ -665,8 +786,14 @@
                     <div class="flex items-center gap-3.5 flex-1 min-w-0 pr-3">
                         <div class="relative flex-shrink-0">
                             <div class="w-[40px] h-[40px] rounded-full bg-[#0693a6] flex items-center justify-center text-white font-semibold text-[14px]">NN</div>
-                            <div class="absolute -bottom-1 -right-1 w-[18px] h-[18px] bg-[#361a38] rounded border-[1.5px] border-white flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#ff4c4c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"></rect><path d="M8 6V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2"></path></svg>
+                            <div class="absolute -bottom-1 -right-1 w-[22px] h-[22px] bg-[#111a22] rounded-[8px] border-[2px] border-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M8 7V5c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2" stroke="#ff4c4c" stroke-width="2.5"/>
+                                    <rect x="2" y="7" width="20" height="13" rx="2.5" fill="#ff4c4c"/>
+                                    <rect x="2" y="12" width="20" height="2.5" fill="#111a22"/>
+                                    <rect x="9.5" y="10.5" width="5" height="4" rx="1" fill="#111a22"/>
+                                    <rect x="10.5" y="11.5" width="3" height="2" rx="0.5" fill="#ff4c4c"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col flex-1 min-w-0">
